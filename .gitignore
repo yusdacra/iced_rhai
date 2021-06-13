@@ -10,7 +10,4 @@
 /.direnv
 /.envrc
 
-
-# Added by cargo
-
-/target
+/.vscode
