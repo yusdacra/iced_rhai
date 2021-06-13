@@ -5,9 +5,12 @@ version = "0.1.0"
 authors = ["Yusuf Bera Ertan <y.bera003.06@protonmail.com>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+iced = { git = "https://github.com/hecrj/iced.git", branch = "master" }
+iced_native = { git = "https://github.com/hecrj/iced.git", branch = "master" }
+rhai = { git = "https://github.com/rhaiscript/rhai.git", branch = "master" }
+flume = "0.10"
+notify = "5.0.0-pre.10"
 
 [package.metadata.nix]
 # Toggle app flake output
@@ -16,3 +19,12 @@ app = true
 build = true
 # Whether to copy built library to package output
 library = false
+runtimeLibs = [
+    "vulkan-loader",
+    "wayland",
+    "wayland-protocols",
+    "libxkbcommon",
+    "xorg.libX11",
+    "xorg.libXrandr",
+    "xorg.libXi",
+]
